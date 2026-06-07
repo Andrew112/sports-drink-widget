@@ -19,18 +19,27 @@
     if (!container) return;
 
     container.innerHTML = `
-      <div style="font-family:sans-serif;border:1px solid #eee;padding:10px;">
-        <h3>🔥 Hydration Picks</h3>
+      <div style="max-width:600px;margin:40px auto;font-family:sans-serif;border:1px solid #eee;padding:15px;border-radius:10px;">
+        
+        <h2 style="margin-bottom:20px;">🔥 Hydration Picks</h2>
+
         ${drinks.map(d => `
-          <div style="margin-bottom:10px;">
-            <img src="${d.image}" width="80"/>
-            <p>${d.name}</p>
-            <strong>${d.price}</strong><br/>
-            <a href="${d.link}" target="_blank">
-              <button>Buy Now</button>
-            </a>
+          <div style="display:flex;gap:15px;margin-bottom:15px;align-items:center;">
+            <img src="${d.image}" width="80" style="border-radius:8px;"/>
+            
+            <div>
+              <p style="margin:0;font-weight:600;">${d.name}</p>
+              <strong>${d.price}</strong><br/>
+
+              <a href="${d.link}" target="_blank" style="text-decoration:none;">
+                <button style="margin-top:5px;padding:6px 10px;cursor:pointer;">
+                  Buy Now
+                </button>
+              </a>
+            </div>
           </div>
         `).join("")}
+
       </div>
     `;
   }
